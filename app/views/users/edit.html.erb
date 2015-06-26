@@ -1,0 +1,12 @@
+<%= form_for @user do |f| %>
+	<%= f.label :username, value: 'Username:' %>
+	<%= f.text_field :username %>
+	
+	<%= f.label :email, value: 'Email:' %>
+	<%= f.text_field :email, value: 'example@email.com' %>
+	
+	<%= f.label :password, value: 'Password:' %>
+	<%= f.password_field :password %>
+	
+	<%= f.submit 'Edit' %>
+<% end %>

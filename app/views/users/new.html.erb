@@ -1,2 +1,39 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<!-- <form accept-charset='UTF-8' action = '/users' method='post'>
+	
+	<label for='username'> Username: </label>
+	<input id = 'username' type='text' name='user[username]'>
+	
+	<label for='email'> Email: </label>
+	<input id = 'email' type='text' name='user[email]'>
+	
+	<label for='password'> Password: </label>
+	<input id = 'password' type='password' name='user[password]'>
+	
+	<input type="hidden" name="authenticity_token" value="<%= 	form_authenticity_token %>">
+	
+	<input type="submit" value="Submit">
+	
+</form>
+
+ <%= form_tag('/users', method: 'post') do %>
+<%= label_tag(:username, 'Username:') %>
+<%= text_field_tag(:username) %>
+<%= label_tag(:username, 'Username:') %>
+<%= text_field_tag(:username) %>
+<%= label_tag(:password, 'Password:') %>
+<%= password_field_tag(:password) %>
+<%= submit_tag ('Submit') %>
+<% end %> -->
+
+<%= form_for @user do |f| %>
+	<%= f.label :username, value: 'Username:' %>
+	<%= f.text_field :username %>
+	
+	<%= f.label :email, value: 'Email:' %>
+	<%= f.text_field :email, value: 'example@email.com' %>
+	
+	<%= f.label :password, value: 'Password:' %>
+	<%= f.password_field :password %>
+	
+	<%= f.submit 'Create' %>
+<% end %>
